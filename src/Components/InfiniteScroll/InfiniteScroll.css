@@ -1,0 +1,27 @@
+.infinite-scroll-container {
+  display: flex;
+  align-items: center;
+}
+
+.scroll-box {
+  display: -webkit-box;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.box {
+  width: 23rem;
+  height: 100px;
+  background-color: lightblue;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+}
+
+.scroll-btn {
+  padding: 10px;
+  cursor: pointer;
+}

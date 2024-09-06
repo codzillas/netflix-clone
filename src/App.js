@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import SignIn from "./Components/Signup/SignIn";
+import SignIn from "./Components/Signin/SignIn";
 import Home from "./Components/Home/Home";
 
 function App() {

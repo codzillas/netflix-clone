@@ -13,13 +13,28 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { useNavigate } from "react-router-dom";
+import "./Header.css";
 
-const pages = ["Products", "Pricing", "Blog"];
+const pages = [
+  "Home",
+  "TV Shows",
+  "Movies",
+  "New & Popular",
+  "My List",
+  "Browse by Languages",
+];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
+function handleAvatar() {
+  const name = localStorage.getItem("name");
+  const index = 0;
+  console.log(name.charAt(index));
+  return name.charAt(index);
+}
 function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
   const navigate = useNavigate();
 
   const handleOpenNavMenu = (event) => {
@@ -38,7 +53,7 @@ function Header() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar className="AppBar">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
@@ -113,7 +128,12 @@ function Header() {
           >
             LOGO
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex", textTransform: "capitalize" },
+            }}
+          >
             {pages.map((page) => (
               <Button
                 key={page}
@@ -127,7 +147,9 @@ function Header() {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Remy Sharp" src="">
+                  {handleAvatar()}
+                </Avatar>
               </IconButton>
             </Tooltip>
             <Menu
