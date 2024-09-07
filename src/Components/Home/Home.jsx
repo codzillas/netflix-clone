@@ -58,8 +58,8 @@ const Home = () => {
         }}
       >
         <Categories />
-        <Categories />
-        <Categories />
+        {/* <Categories />
+        <Categories /> */}
       </Box>
       <Footer />
     </div>

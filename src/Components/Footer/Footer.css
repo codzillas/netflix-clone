@@ -1,3 +1,5 @@
+@media only screen and (min-width: 1280px) and (max-width: 1440px) {
+}
 .footer {
   background-color: #222;
   color: #fff;
@@ -53,7 +55,6 @@
   padding-top: 20px;
   border-top: 1px solid #444;
 }
-
 @media (max-width: 768px) {
   .footer-content {
     flex-direction: column;

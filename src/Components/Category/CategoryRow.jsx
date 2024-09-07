@@ -1,5 +1,5 @@
 import { Box, CardContent, IconButton, Typography } from "@mui/material";
-import RecipeReviewCard from "../Card/Card";
+import MovieCard from "../Card/Card";
 import Slider from "react-slick";
 import { Card } from "react-bootstrap";
 import { useEffect, useRef, useState } from "react";
@@ -54,6 +54,7 @@ function CategoryRow({ moviesPosters, title }) {
       behavior: "smooth",
     });
   };
+
   return (
     <Box>
       <Typography className="next-watch" variant="h2">
@@ -86,7 +87,7 @@ function CategoryRow({ moviesPosters, title }) {
           <ArrowBackIosIcon fontSize="large" />
         </IconButton>
         {moviesPosters.map((src) => {
-          return <RecipeReviewCard src={src} />;
+          return <MovieCard src={src} />;
         })}
         <IconButton
           onClick={() => {

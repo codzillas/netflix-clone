@@ -1,44 +1,49 @@
-.CarousalCaption {
-  transform: translate3d(0px, 0px, 0px);
-  transition-duration: 1300ms;
-  transition-delay: 0ms;
-  opacity: 1;
-  width: 650px;
-  align-content: left;
-  position: relative;
-  bottom: 30rem;
-  left: 10px;
-}
-.CarousalCaptionWrapper {
-  opacity: 1;
-  transition-duration: 600ms;
-  transition-delay: 200ms;
-  width: 650px;
-}
-.CaptionHeading {
-  color: #fff;
-  font-size: 1.6vw;
-  margin: 1vw 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
-  transition: color 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-  display: block;
-}
-.CaptionDescription {
-  color: #fff;
-  font-size: 1.2vw;
-  font-weight: 400;
-  line-height: normal;
-  margin-top: 0.1vw;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
-  display: block;
-}
+@media only screen and (min-width: 1280px) and (max-width: 1440px) {}
+  .CarousalCaption {
+    transform: translate3d(0px, 0px, 0px);
+    transition-duration: 1300ms;
+    transition-delay: 0ms;
+    opacity: 1;
+    width: 650px;
+    align-content: left;
+    position: relative;
+    bottom: 30rem;
+    left: 10px;
+  }
+  .CarousalCaptionWrapper {
+    opacity: 1;
+    transition-duration: 600ms;
+    transition-delay: 200ms;
+    width: 650px;
+  }
+  .CaptionHeading {
+    color: #fff;
+    font-size: 1.6vw;
+    margin: 1vw 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+    transition: color 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: block;
+  }
+  .CaptionDescription {
+    color: #fff;
+    font-size: 1.2vw;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 0.1vw;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+    display: block;
+  }
 
-.carousel-control-prev {
-  visibility: hidden;
-}
-.carousel-control-next {
-  visibility: hidden;
-}
+  .carousel-control-prev {
+    visibility: hidden;
+  }
+  .carousel-control-next {
+    visibility: hidden;
+  }
+
+  .carousel-indicators {
+    bottom: 21rem !important;
+  }
 
 /* For small screen */
 
@@ -71,8 +76,4 @@
     left: 2%; */
     text-align: left;
   }
-}
-
-.carousel-indicators {
-  bottom: 21rem !important;
 }

@@ -7,7 +7,13 @@ import FormControl from "@mui/material/FormControl";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
-import { createTheme, styled, ThemeProvider } from "@mui/material/styles";
+import {
+  alpha,
+  createTheme,
+  getContrastRatio,
+  styled,
+  ThemeProvider,
+} from "@mui/material/styles";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
@@ -15,6 +21,7 @@ import TemplateFrame from "./TemplateFrame";
 import getSignUpTheme from "./theme/getSignUpTheme";
 import { useNavigate } from "react-router-dom";
 import { BASE_URL, ENDPOINTS } from "../../shared/constants";
+import { whiteBase, whiteMain } from "../../shared/colors";
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: "flex",
@@ -51,7 +58,18 @@ const SignUpContainer = styled(Stack)(({ theme }) => ({
 
 export default function SignIn() {
   const [mode, setMode] = React.useState("light");
-  const defaultTheme = createTheme({ palette: { mode } });
+  const defaultTheme = createTheme({
+    palette: {
+      mode,
+      white: {
+        main: whiteMain,
+        light: alpha(whiteBase, 0.5),
+        dark: alpha(whiteBase, 0.9),
+        contrastText:
+          getContrastRatio(whiteMain, "#fff") > 4.5 ? "#fff" : "#111",
+      },
+    },
+  });
   createTheme(getSignUpTheme(mode));
   const [email, setEmail] = React.useState("");
   const [pass, setPass] = React.useState("");
@@ -266,6 +284,11 @@ export default function SignIn() {
                     error={passwordError}
                     helperText={passwordErrorMessage}
                     color={passwordError ? "error" : "primary"}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter") {
+                        validateInputs();
+                      }
+                    }}
                     onChange={(e) => {
                       setPass(e.target.value);
                     }}

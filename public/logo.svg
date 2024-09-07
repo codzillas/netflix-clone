@@ -1,0 +1,11 @@
+<svg width="600" height="120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define a tighter downward curve -->
+  <path id="curve" d="M50,80 Q300,20 550,80" fill="transparent" stroke="transparent" />
+
+  <!-- Add the text and link it to the path -->
+  <text font-size="60" fill="red" font-family="Arial, sans-serif" font-weight="bold" text-anchor="middle">
+    <textPath href="#curve" startOffset="50%">
+      NETFLIX
+    </textPath>
+  </text>
+</svg>
